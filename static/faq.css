@@ -1,0 +1,90 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main {
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('/static/images/background/COVER3.png');
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+}
+
+/* NAVBAR */
+.navbar {
+    width: 100%;
+    padding: 25px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: #ffff00;
+    font-size: 32px;
+    font-family: 'Trattatello', serif;
+}
+
+.menu ul {
+    display: flex;
+    list-style: none;
+    gap: 40px;
+}
+
+.menu ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-family: Arial;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: 0.4s;
+}
+
+.menu ul li a:hover {
+    color: #ffff00;
+}
+
+/* FAQ DESIGN - BOX REMOVED */
+.faq-content {
+    display: flex;
+    justify-content: center;
+    padding: 40px 10%;
+    flex: 1;
+}
+
+.faq-wrapper {
+    width: 100%;
+    max-width: 1000px;
+    color: white;
+}
+
+/* CATEGORY TITLES (H1) */
+.faq-wrapper h1 {
+    color: #ffff00;
+    font-size: 38px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #ffff00;
+    display: inline-block;
+}
+
+/* QUESTIONS (H3) */
+.faq-wrapper h3 {
+    font-size: 22px;
+    color: #ffff00;
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+
+/* ANSWERS (P) */
+.faq-wrapper p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #ffffff;
+    margin-bottom: 10px;
+    padding-left: 10px;
+}

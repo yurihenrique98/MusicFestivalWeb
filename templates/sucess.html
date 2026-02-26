@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Successful Registration</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='project.css') }}">
+    <style>
+        .success-box {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 50px;
+            border-radius: 20px;
+            text-align: center;
+            margin-top: 15%;
+            color: white;
+            display: inline-block;
+        }
+        .btn-back {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #ffff00;
+            color: black;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="main" style="text-align: center;">
+        <div class="success-box">
+            <h2 style="color: #ffff00; font-size: 40px;">🤘 Success! 🤘</h2>
+            <p style="font-size: 20px; margin-top: 10px;">Thank you for registering for the Fun Festival Music.</p>
+            <p>We look forward to seeing you at Wembley Stadium!</p>
+            <a href="/home" class="btn-back">Go back to the main page</a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='stages.css') }}">
+    <title>Stages</title>
+</head>
+<body>
+    <div class="main">
+        <div class="navbar">
+            <h2 class="logo">FUN FESTIVAL MUSIC</h2>
+            <div class="menu">
+                <ul>
+                    <li><a href="/home">Home</a></li>
+                    <li><a href="/stages">Stages</a></li>
+                    <li><a href="/faq">FAQ</a></li>
+                    <li><a href="/contact">CONTACT</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <section class="stages-layout">
+            <div class="stages-info">
+                <h1>Festival Stages</h1>
+                
+                <div class="stage-item">
+                    <h3>Main Stage</h3>
+                    <p>Description: The heart of the festival featuring headlining performances. <br>
+                    Genre Focus: Rock, Pop, and Mainstream Hits.</p>
+                </div>
+                
+                <div class="stage-item">
+                    <h3>Dance Stage</h3>
+                    <p>Description: Pulsating beats and energetic performances by top DJs. <br>
+                    Genre Focus: EDM, House, and Dance Music.</p>
+                </div>
+                
+                <div class="stage-item">
+                    <h3>Hip-Hop Stage</h3>
+                    <p>Description: The best in rap and hip-hop, featuring legendary acts. <br>
+                    Genre Focus: Hip-Hop, Rap, and R&B.</p>
+                </div>
+
+                <div class="stage-item">
+                    <h3>Local Talent Stage</h3>
+                    <p>Description: Celebrate the vibrant local music scene. <br>
+                    Genre Focus: Various genres by local artists.</p>
+                </div>
+            </div>
+
+            <div class="music-player-container">
+                <div class="music-player-body">
+                    <h2>FUN MIX PLAYLIST</h2>
+                    <img class="track-image" id="trackImage" src="" alt="Track Image">
+            
+                    <h3 id="trackName">Loading...</h3>
+                    <audio id="audioPlayer">
+                        <source src="/static/music/HIPHOP /50 Cent - In Da Club (Official Music Video).mp3" type="audio/mpeg">
+                    </audio>
+
+                    <div class="controls">
+                        <button class="control-btn" id="prevButton">&#9665;</button>
+                        <button class="control-btn play-pause" id="playPauseButton">&#9658;</button>
+                        <button class="control-btn" id="nextButton">&#9655;</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="footer-icons">
+            <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
+            <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
+            <a href="#"><ion-icon name="logo-twitter"></ion-icon></a>
+        </div>
+    </div>
+
+    <script>
+        const audioPlayer = document.getElementById('audioPlayer');
+        const playPauseButton = document.getElementById('playPauseButton');
+        const nextButton = document.getElementById('nextButton');
+        const prevButton = document.getElementById('prevButton');
+        const trackNameElement = document.getElementById('trackName');
+        const trackImageElement = document.getElementById('trackImage'); 
+       
+        const audioFiles = [
+            { name: '50 Cent - In Da Club', src: '/static/music/HIPHOP /50 Cent - In Da Club (Official Music Video).mp3', image: '/static/images/ICON/HIP HOP.png' },
+            { name: 'Akon - Smack That', src: '/static/music/HIPHOP /Akon - Smack That (Official Music Video) ft. Eminem.mp3', image: '/static/images/ICON/HIP HOP.png' },
+            { name: 'Dr. Dre - Still D.R.E.', src: '/static/music/HIPHOP /Dr. Dre - Still D.R.E. ft. Snoop Dogg.mp3', image: '/static/images/ICON/HIP HOP.png' },
+            { name: 'Eminem - Without Me', src: '/static/music/HIPHOP /Eminem - Without Me (Official Music Video).mp3', image: '/static/images/ICON/HIP HOP.png' },
+            { name: 'Avicii - Levels', src: '/static/music/EDM/Avicii - Levels.mp3', image: '/static/images/ICON/EDM.png' },
+            { name: 'AC-DC - Back In Black', src: '/static/music/ROCK/AC-DC - Back In Black (Official 4K Video).mp3', image: '/static/images/ICON/rock.png' },
+            { name: 'Blank Space - Taylor s', src: '/static/music/POP/Blank Space (Taylor s Version).mp3', image: '/static/images/ICON/Pop.png' }
+        ];
+        
+        let currentTrack = 0;
+        let isPlaying = false;
+
+        function updateTrackDisplay() {
+            trackNameElement.textContent = audioFiles[currentTrack].name;
+            trackImageElement.src = audioFiles[currentTrack].image;
+            audioPlayer.src = audioFiles[currentTrack].src;
+        }
+
+        playPauseButton.addEventListener('click', () => {
+            if (isPlaying) {
+                audioPlayer.pause();
+                isPlaying = false;
+                playPauseButton.textContent = '\u25BA';
+            } else {
+                audioPlayer.play();
+                isPlaying = true;
+                playPauseButton.textContent = '\u275A\u275A';
+            }
+        });
+        
+        nextButton.addEventListener('click', () => {
+            currentTrack = (currentTrack + 1) % audioFiles.length;
+            updateTrackDisplay();
+            if (isPlaying) audioPlayer.play();
+        });
+        
+        prevButton.addEventListener('click', () => {
+            currentTrack = (currentTrack - 1 + audioFiles.length) % audioFiles.length;
+            updateTrackDisplay();
+            if (isPlaying) audioPlayer.play();
+        });
+
+        updateTrackDisplay();
+    </script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+</body>
+</html>

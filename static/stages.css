@@ -1,0 +1,158 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main {
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('/static/images/background/COVER2.png');
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+/* NAVBAR */
+.navbar {
+    width: 100%;
+    padding: 25px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo { 
+    color: #ffff00 !important; 
+    font-size: 32px; 
+    font-family: 'Trattatello', serif; 
+}
+
+.menu ul { 
+    display: flex; 
+    list-style: none; 
+    gap: 40px; 
+}
+
+.menu ul li a { 
+    color: #fff !important; 
+    text-decoration: none; 
+    font-weight: bold; 
+    font-family: Arial, sans-serif;
+    text-transform: uppercase;
+}
+
+/* LAYOUT ENGINE */
+.stages-layout {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10% 100px 10%;
+    flex: 1;
+}
+
+/* LEFT SIDE TEXT */
+.stages-info {
+    max-width: 55%;
+    color: white;
+}
+
+.stages-info h1 {
+    font-size: 55px;
+    color: #ffff00;
+    margin-bottom: 30px;
+    font-family: 'Times New Roman', serif;
+}
+
+.stage-item {
+    margin-bottom: 25px;
+}
+
+.stage-item h3 {
+    font-size: 30px;
+    color: #ffff00;
+    margin-bottom: 5px;
+}
+
+.stage-item p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #ffffff;
+}
+
+/* RIGHT SIDE MUSIC PLAYER */
+.music-player-container {
+    width: 320px;
+}
+
+.music-player-body {
+    background: rgba(0, 0, 0, 0.85);
+    border: 2px solid #ffff00;
+    border-radius: 20px;
+    padding: 30px;
+    text-align: center;
+    color: white;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.music-player-body h2 {
+    font-size: 18px;
+    color: #ffff00;
+    margin-bottom: 15px;
+}
+
+.track-image {
+    width: 180px;
+    height: 180px;
+    border-radius: 15px;
+    margin-bottom: 15px;
+    border: 2px solid #ffff00;
+    object-fit: cover;
+}
+
+.music-player-body h3 {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+/* PLAYER CONTROLS */
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.control-btn {
+    background: #ffff00;
+    border: none;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.control-btn:hover {
+    background: white;
+    transform: scale(1.1);
+}
+
+/* FOOTER */
+.footer-icons {
+    position: absolute;
+    bottom: 30px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.footer-icons ion-icon {
+    color: white !important;
+    font-size: 30px;
+}

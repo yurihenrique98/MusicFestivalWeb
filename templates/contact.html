@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='contact.css') }}">
+    <title>Contact Us - Fun Festival Music</title>
+</head>
+<body>
+    <div class="main">
+        <div class="navbar">
+            <h2 class="logo">FUN FESTIVAL MUSIC</h2>
+            <div class="menu">
+                <ul>
+                    <li><a href="/home">Home</a></li>
+                    <li><a href="/stages">Stages</a></li>
+                    <li><a href="/faq">FAQ</a></li>
+                    <li><a href="/contact">CONTACT</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <section class="contact-section">
+            <div class="contact-card">
+                <div class="contact-header">
+                    <h3>Let's talk about everything</h3>
+                    <p>We are here to help! At Fun Festival Music, our customer service team is dedicated to providing you with the best possible experience.</p>
+                </div>
+
+                <div class="contact-info">
+                    <p><strong>Customer Service Hours:</strong></p>
+                    <p>Monday to Friday: 9 AM - 6 PM</p>
+                    <p>Saturday: 10 AM - 4 PM | Sunday: Closed</p>
+                </div>
+            
+                <form id="contactForm" class="contact-form">
+                    <input type="email" name="email" class="input-field" placeholder="Enter your email" required>
+                    <textarea name="message" class="input-field textarea" placeholder="How can I help you?" required></textarea>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+
+                <div id="confirmationMessage"></div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const contactForm = document.getElementById('contactForm');
+            const confirmationMessage = document.getElementById('confirmationMessage');
+
+            contactForm.addEventListener('submit', (event) => {
+                event.preventDefault();
+                const formData = new FormData(contactForm);
+                const email = formData.get('email');
+                const userMessage = formData.get('message');
+
+                confirmationMessage.textContent = `Thank you! We've received your message. We will respond to ${email} as soon as possible.`;
+                confirmationMessage.style.display = 'block';
+
+                contactForm.reset();
+            });
+        });
+    </script>
+</body>
+</html>

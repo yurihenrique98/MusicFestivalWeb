@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Festival 2024</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='project.css') }}">
+</head>
+<body>
+
+    <div class="main">
+        <div class="navbar">
+            <h2 class="logo">FUN FESTIVAL MUSIC</h2>
+            <div class="menu">
+                <ul>
+                    <li><a href="/home">Home</a></li>
+                    <li><a href="/stages">Stages</a></li>
+                    <li><a href="/faq">FAQ</a></li>
+                    <li><a href="/contact">CONTACT</a></li>
+                </ul>
+            </div>
+        </div> 
+
+        <div class="content">
+            <div class="content-text">
+                <h1>The waitest summer festival!!!</h1>
+                <span class="highlight"> FUN FESTIVAL MUSIC &#128266;</span>
+                <p class="par">
+                     Join Us for the Ultimate Music Festival Experience! <br><br>
+                    Get ready to feel the rhythm and lose yourself in the beats at this year’s most electrifying music festival!<br><br>
+                    🗓️ Date: 20th June 2024 | 📍 Location: Wembley Stadium, HA9 0WS<br><br>
+                    Come and create unforgettable memories with us. Let’s make this festival the highlight of your year!
+                </p>
+
+                <button id="regBtn" class="btn-register">REGISTER NOW</button>
+            </div>
+        </div>
+
+        <div class="footer-icons">
+            <a href="https://www.facebook.com/yourfestival" target="_blank">
+                <ion-icon name="logo-facebook"></ion-icon>
+            </a>
+            <a href="https://www.instagram.com/yourfestival" target="_blank">
+                <ion-icon name="logo-instagram"></ion-icon>
+            </a>
+            <a href="https://www.twitter.com/yourfestival" target="_blank">
+                <ion-icon name="logo-twitter"></ion-icon>
+            </a>
+        </div>
+    </div> 
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 style="color: #ffff00; margin-bottom: 20px;">Registration</h2>
+            <form action="/register" method="POST">
+                <input type="text" name="name" placeholder="Full Name" required>
+                <input type="email" name="email" placeholder="Email Address" required>
+                <input type="password" name="password" placeholder="Password" required>
+                <input type="submit" value="Submit Registration" class="btn-register" style="width: 100%; margin-top: 10px;">
+            </form>
+        </div>
+    </div>
+
+    <script>
+        var modal = document.getElementById("myModal");
+        var btn = document.getElementById("regBtn");
+        var span = document.getElementsByClassName("close")[0];
+
+        btn.onclick = function() { modal.style.display = "block"; }
+        span.onclick = function() { modal.style.display = "none"; }
+        window.onclick = function(event) { if (event.target == modal) { modal.style.display = "none"; } }
+    </script>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+</body>
+</html>
