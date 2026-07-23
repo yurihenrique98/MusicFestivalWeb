@@ -1,7 +1,5 @@
 # MusicFestivalWeb – Interactive Festival Website
 
-![MusicFestivalWeb Home](./images/MusicFestivalWeb.png)
-
 ## Project Overview
 
 MusicFestivalWeb is a full-stack festival website developed as part of a Web Technologies module. The application provides visitors with an engaging online experience where they can explore festival information, discover different music stages, register for the event, browse frequently asked questions, and contact the organisers.
@@ -75,7 +73,7 @@ This was an individual university project where I independently designed, develo
 
 ## Home Page
 
-![Home Page](./images/home-page.png)
+![MusicFestivalWeb Home](./images/MusicFestivalWeb.png)
 
 The landing page introduces visitors to the festival with event information, navigation links, and a registration form where users can create an account before attending the festival.
 
